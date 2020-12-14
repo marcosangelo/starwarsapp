@@ -15,12 +15,14 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         SwApiRepository()
     }
 
+    val isLoading = MutableLiveData<Boolean?>()
 
     private val _allMovies = MutableLiveData<List<Movie>>()
 
     val allMovies: LiveData<List<Movie>> get() = _allMovies
 
     init {
+        isLoading.postValue(true)
         getAllMovies()
     }
 
@@ -28,6 +30,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             try {
                 _allMovies.value = _repository.movies()
+                isLoading.postValue(false)
             } catch (e: Exception) {
                 e.printStackTrace()
             }
