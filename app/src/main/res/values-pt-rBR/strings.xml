@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_app">Filmes Star Wars</string>
+    <string name="title_movies_item">Titulo</string>
+    <string name="director_movies_item">Diretor</string>
+</resources>
