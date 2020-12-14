@@ -56,9 +56,8 @@ class MainFragment : Fragment() {
             override fun onItemClick(
                 view: View, position: Int
             ) {
-                val movieId = movies[position].filmUrl.filter { it.isDigit() }
                 val action =
-                    MainFragmentDirections.actionNavigationHomeToMovieDetailFragment(movieId = movieId)
+                    MainFragmentDirections.actionNavigationHomeToMovieDetailFragment(movie = movies[position])
                 navController.navigate(action)
             }
         })

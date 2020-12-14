@@ -9,6 +9,7 @@ import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 private const val BASE_URL = "https://swapi.dev/api/"
 
@@ -27,8 +28,11 @@ interface SwapiService {
     @GET("films")
     fun getMoviesAsync(): Deferred<MoviesResult>
 
-    @GET("films/")
-    fun getMovieAsync(movieId: String): Deferred<Movie>
+//    @GET("films/{movieId}")
+//    fun getMovieAsync(@Path("movieId") movieId: String): Deferred<Movie>
+
+    @GET("films/{movieId}")
+    fun getMovieAsync(@Path("movieId") movieId: String):  Deferred<Movie>
 }
 
 object Swapi {

@@ -23,8 +23,8 @@
         tools:layout="@layout/movie_fragment">
 
         <argument
-            android:name="movie_id"
-            app:argType="string" />
+            android:name="movie"
+            app:argType="br.com.apinteractive.starwarsapp.data.model.Movie" />
     </fragment>
 
 </navigation>

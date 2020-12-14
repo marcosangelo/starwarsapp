@@ -25,7 +25,7 @@ class MovieDetailFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewmodel = viewModel
 
-        viewModel.loadArgs(args.movieId)
+        viewModel.loadArgs(args.movie)
         return binding.root
     }
 }
